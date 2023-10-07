@@ -1,0 +1,40 @@
+<script>
+    function checkCats(CatsTuti, CatsNining) {
+  // Salin array milik Tuti dan hapus usia kucing dari array yang disalin
+  const TutiCatsCopy = [...CatsTuti];
+  TutiCatsCopy.pop();
+  TutiCatsCopy.shift();
+
+  // Gabungkan data Tuti yang sudah dikoreksi dengan data Nining
+  const combinedCats = [...TutiCatsCopy, ...CatsNining];
+
+  // Loop melalui setiap kucing dan menentukan apakah itu dewasa atau kecil
+  for (let i = 0; i < combinedCats.length; i++) {
+    if (i === 0) {
+      // Kucing Nomor 1 adalah Kucing Dewasa
+      console.log("Kucing Nomor 1 adalah Kucing Dewasa, dan berusia 5 tahun");
+    } else {
+      if (combinedCats[i] >= 3) {
+        console.log(`Kucing Nomor ${i + 1} adalah Kucing Dewasa.`);
+      } else {
+        console.log(`Kucing Nomor ${i + 1} masih anak-anak.`);
+      }
+    }
+  }
+}
+
+// Data 1
+const DataTuti1 = [3, 5, 2, 12, 7];
+const DataNining1 = [4, 1, 15, 8, 3];
+
+// Data 2
+const DataTuti2 = [9, 16, 6, 8, 3];
+const DataNining2 = [10, 5, 6, 1, 4];
+
+// Menjalankan fungsi checkCats untuk kedua set data uji
+console.log("Data 1:");
+checkCats(DataTuti1, DataNining1);
+
+console.log("\nData 2:");
+checkCats(DataTuti2, DataNining2);
+</script>
